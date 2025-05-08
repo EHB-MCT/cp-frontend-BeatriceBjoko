@@ -1,0 +1,77 @@
+[
+	{
+		"id": "fleur-vandeville",
+		"nameStudent": "Fleur Van De Ville",
+		"fairytale": "Rapunzel",
+		"description": "",
+		"videoExplainer": "",
+		"imgThumbnail": "",
+		"imgBanner": "",
+		"imgsExtra": {
+			"imgExtra-1": "",
+			"imgExtra-2": "",
+			"imgExtra-3": ""
+		},
+		"storyFrom": "Roy Conli"
+	},
+	{
+		"id": "arno-baeck",
+		"nameStudent": "Arno Baeck",
+		"fairytale": "Hans en Grietje",
+		"description": "",
+		"videoExplainer": "",
+		"imgThumbnail": "",
+		"imgBanner": "",
+		"imgsExtra": {
+			"imgExtra-1": "",
+			"imgExtra-2": "",
+			"imgExtra-3": ""
+		},
+		"storyFrom": "Brothers Grimm"
+	},
+	{
+		"id": "sam-hoeterickx",
+		"nameStudent": "Sam Hoeterickx",
+		"fairytale": "De wolf en de 3 biggetjes",
+		"description": "",
+		"videoExplainer": "",
+		"imgThumbnail": "",
+		"imgBanner": "",
+		"imgsExtra": {
+			"imgExtra-1": "",
+			"imgExtra-2": "",
+			"imgExtra-3": ""
+		},
+		"storyFrom": "Brothers Grimm"
+	},
+	{
+		"id": "matteo-giambarresi",
+		"nameStudent": "Matteo Giambarresi",
+		"fairytale": "De Raaf en de Vos",
+		"description": "",
+		"videoExplainer": "",
+		"imgThumbnail": "",
+		"imgBanner": "",
+		"imgsExtra": {
+			"imgExtra-1": "",
+			"imgExtra-2": "",
+			"imgExtra-3": ""
+		},
+		"storyFrom": "Jorrit Stollman"
+	},
+	{
+		"id": "beatrice-bjoko",
+		"nameStudent": "Beatrice Bjoko",
+		"fairytale": "De Vuurvogel",
+		"description": "",
+		"videoExplainer": "",
+		"imgThumbnail": "",
+		"imgBanner": "",
+		"imgsExtra": {
+			"imgExtra-1": "",
+			"imgExtra-2": "",
+			"imgExtra-3": ""
+		},
+		"storyFrom": "Igor Stravinski"
+	}
+]

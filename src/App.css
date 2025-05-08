@@ -32,3 +32,67 @@ body {
 .logo {
 	height: 40px;
 }
+
+/*  SPOTLIGHT SECTION  */
+.spotlight {
+	padding: 40px;
+}
+
+.spotlight h2 {
+	font-family: "Bungee", sans-serif;
+	font-size: 24pt;
+	margin-bottom: 20px;
+}
+
+.spotlight-cards {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 24px;
+	justify-content: center;
+}
+
+.card {
+	width: 220px;
+	background-color: white;
+	border-radius: 16px;
+	padding: 12px;
+	text-align: center;
+	position: relative;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.card img {
+	width: 100%;
+	border-radius: 16px;
+	object-fit: cover;
+	height: 140px;
+}
+
+.card h3 {
+	margin-top: 10px;
+	font-family: "Bungee", sans-serif;
+	font-size: 16pt;
+}
+
+.card p {
+	font-family: "Helvetica Neue", sans-serif;
+	font-size: 16px;
+	color: #767676;
+}
+
+.info-button {
+	position: absolute;
+	bottom: 12px;
+	right: 12px;
+	background-color: red;
+	color: white;
+	border-radius: 50%;
+	width: 28px;
+	height: 28px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-decoration: none;
+	font-weight: bold;
+	font-size: 14px;
+}
