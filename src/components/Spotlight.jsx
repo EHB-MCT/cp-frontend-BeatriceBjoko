@@ -17,18 +17,24 @@ function Spotlight() {
 
 	return (
 		<section className="spotlight">
-			<h2>IN THE SPOTLIGHT</h2>
-			<div className="spotlight-cards">
-				{students.map((student) => (
-					<div className="card" key={student.id}>
-						<img src={student.imgThumbnail} alt={student.fairytale} />
-						<h3>{student.fairytale.toUpperCase()}</h3>
-						<p>{student.nameStudent}</p>
-						<Link to={`/making-of/${student.id}`} className="info-button">
-							i
-						</Link>
-					</div>
-				))}
+			<div className="wrapper">
+				<h2>IN THE SPOTLIGHT</h2>
+				<div className="spotlight-cards">
+					{students.map((student) => (
+						<div className="card" key={student.id}>
+							<img src={student.imgThumbnail} alt={student.fairytale} className="card-img" />
+							<div className="card-details">
+								<div className="text">
+									<h3>{student.fairytale.toUpperCase()}</h3>
+									<p>{student.nameStudent}</p>
+								</div>
+								<Link to={`/making-of/${student.id}`} className="info-button">
+									i
+								</Link>
+							</div>
+						</div>
+					))}
+				</div>
 			</div>
 		</section>
 	);

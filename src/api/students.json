@@ -5,7 +5,7 @@
 		"fairytale": "Rapunzel",
 		"description": "",
 		"videoExplainer": "",
-		"imgThumbnail": "",
+		"imgThumbnail": "/src/assets/Rapunzel.png",
 		"imgBanner": "",
 		"imgsExtra": {
 			"imgExtra-1": "",
@@ -20,7 +20,7 @@
 		"fairytale": "Hans en Grietje",
 		"description": "",
 		"videoExplainer": "",
-		"imgThumbnail": "",
+		"imgThumbnail": "/src/assets/Hans en Grietje.png",
 		"imgBanner": "",
 		"imgsExtra": {
 			"imgExtra-1": "",
@@ -35,7 +35,7 @@
 		"fairytale": "De wolf en de 3 biggetjes",
 		"description": "",
 		"videoExplainer": "",
-		"imgThumbnail": "",
+		"imgThumbnail": "/src/assets/De wolf en de drie biggetjes.png",
 		"imgBanner": "",
 		"imgsExtra": {
 			"imgExtra-1": "",
@@ -50,7 +50,7 @@
 		"fairytale": "De Raaf en de Vos",
 		"description": "",
 		"videoExplainer": "",
-		"imgThumbnail": "",
+		"imgThumbnail": "/src/assets/De raaf en de vos.png",
 		"imgBanner": "",
 		"imgsExtra": {
 			"imgExtra-1": "",
@@ -65,7 +65,7 @@
 		"fairytale": "De Vuurvogel",
 		"description": "",
 		"videoExplainer": "",
-		"imgThumbnail": "",
+		"imgThumbnail": "/src/assets/De vuurvogel.png",
 		"imgBanner": "",
 		"imgsExtra": {
 			"imgExtra-1": "",
