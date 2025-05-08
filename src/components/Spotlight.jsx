@@ -35,6 +35,11 @@ function Spotlight() {
 						</div>
 					))}
 				</div>
+				<div className="spotlight-button">
+					<Link to="/projects" className="all-projects-button">
+						ALL PROJECTS
+					</Link>
+				</div>
 			</div>
 		</section>
 	);
