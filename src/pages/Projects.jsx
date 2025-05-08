@@ -1,8 +1,10 @@
+import ProjectsList from "../components/ProjectsList";
+
 function Projects() {
 	return (
-		<div>
-			<h1>Projects werkt!</h1>
-		</div>
+		<section className="projects">
+			<ProjectsList />
+		</section>
 	);
 }
 

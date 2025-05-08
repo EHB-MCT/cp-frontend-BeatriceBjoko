@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import ProjectCard from "./ProjectCard";
 
 function Spotlight() {
 	const [students, setStudents] = useState([]);
@@ -21,18 +22,7 @@ function Spotlight() {
 				<h2>IN THE SPOTLIGHT</h2>
 				<div className="spotlight-cards">
 					{students.map((student) => (
-						<div className="card" key={student.id}>
-							<img src={student.imgThumbnail} alt={student.fairytale} className="card-img" />
-							<div className="card-details">
-								<div className="text">
-									<h3>{student.fairytale.toUpperCase()}</h3>
-									<p>{student.nameStudent}</p>
-								</div>
-								<Link to={`/making-of/${student.id}`} className="info-button">
-									i
-								</Link>
-							</div>
-						</div>
+						<ProjectCard key={student.id} student={student} />
 					))}
 				</div>
 				<div className="spotlight-button">
@@ -44,5 +34,4 @@ function Spotlight() {
 		</section>
 	);
 }
-
 export default Spotlight;

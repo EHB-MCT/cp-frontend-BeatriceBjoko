@@ -259,3 +259,11 @@ body {
 	text-decoration: none;
 	font-family: "Bungee", sans-serif;
 }
+
+/*  PROJECTSLIST SECTION  */
+
+.allprojects h2 {
+	font-family: "Bungee", sans-serif;
+	font-size: 24pt;
+	margin: 0px;
+}

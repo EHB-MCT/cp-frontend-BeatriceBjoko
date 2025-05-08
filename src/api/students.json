@@ -73,5 +73,95 @@
 			"imgExtra-3": ""
 		},
 		"storyFrom": "Igor Stravinski"
+	},
+	{
+		"id": "jordi-deleeuw",
+		"nameStudent": "Jordi De Leeuw",
+		"fairytale": "The fairy boy of Leith",
+		"description": "",
+		"videoExplainer": "",
+		"imgThumbnail": "/src/assets/the fairy boy of leith.png",
+		"imgBanner": "",
+		"imgsExtra": {
+			"imgExtra-1": "",
+			"imgExtra-2": "",
+			"imgExtra-3": ""
+		},
+		"storyFrom": "George Douglas"
+	},
+	{
+		"id": "sophia-rahmoun",
+		"nameStudent": "Sophia Rahmoun",
+		"fairytale": "Little Red Riding Hood",
+		"description": "",
+		"videoExplainer": "",
+		"imgThumbnail": "/src/assets/little red riding hood.png",
+		"imgBanner": "",
+		"imgsExtra": {
+			"imgExtra-1": "",
+			"imgExtra-2": "",
+			"imgExtra-3": ""
+		},
+		"storyFrom": "Brothers Grimm"
+	},
+	{
+		"id": "wout-vanimpe",
+		"nameStudent": "Wout Van Impe",
+		"fairytale": "Blauwbaard",
+		"description": "",
+		"videoExplainer": "",
+		"imgThumbnail": "/src/assets/blauwbaard.png",
+		"imgBanner": "",
+		"imgsExtra": {
+			"imgExtra-1": "",
+			"imgExtra-2": "",
+			"imgExtra-3": ""
+		},
+		"storyFrom": "Charles Perrault"
+	},
+	{
+		"id": "rayan-arssi",
+		"nameStudent": "Rayan Arssi",
+		"fairytale": "De kleine zeemeermin",
+		"description": "",
+		"videoExplainer": "",
+		"imgThumbnail": "/src/assets/zeemeermin.jpg",
+		"imgBanner": "",
+		"imgsExtra": {
+			"imgExtra-1": "",
+			"imgExtra-2": "",
+			"imgExtra-3": ""
+		},
+		"storyFrom": "Hans Christian Andersen"
+	},
+	{
+		"id": "manal-boulahya",
+		"nameStudent": "Manal Boulahya",
+		"fairytale": "Princes Kaguya ",
+		"description": "",
+		"videoExplainer": "",
+		"imgThumbnail": "/src/assets/princesskaguya.png",
+		"imgBanner": "",
+		"imgsExtra": {
+			"imgExtra-1": "",
+			"imgExtra-2": "",
+			"imgExtra-3": ""
+		},
+		"storyFrom": "Isao Takahata"
+	},
+	{
+		"id": "pema-bhutia",
+		"nameStudent": "Pema Bhutia",
+		"fairytale": "Coraline",
+		"description": "",
+		"videoExplainer": "",
+		"imgThumbnail": "/src/assets/coraline.png",
+		"imgBanner": "",
+		"imgsExtra": {
+			"imgExtra-1": "",
+			"imgExtra-2": "",
+			"imgExtra-3": ""
+		},
+		"storyFrom": "Henry Selick"
 	}
 ]
