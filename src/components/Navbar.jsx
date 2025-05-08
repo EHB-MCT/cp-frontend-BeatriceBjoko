@@ -1,22 +1,30 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "../App.css";
 import logo from "../assets/logosprookje.svg";
 
 function Navbar() {
 	return (
 		<nav className="navbar">
-			<img src={logo} alt="Er Was Eens" className="logo" />
-			<ul className="nav-links">
-				<li>
-					<Link to="/">HOME</Link>
-				</li>
-				<li>
-					<Link to="/projects">PROJECTS</Link>
-				</li>
-				<li>
-					<Link to="/making-of/example-id">MAKING-OF</Link>
-				</li>
-			</ul>
+			<div className="wrapper">
+				<img src={logo} alt="Er Was Eens" className="logo" />
+				<ul className="nav-links">
+					<li>
+						<NavLink to="/" className={({ isActive }) => (isActive ? "active" : "")}>
+							HOME
+						</NavLink>
+					</li>
+					<li>
+						<NavLink to="/projects" className={({ isActive }) => (isActive ? "active" : "")}>
+							PROJECTS
+						</NavLink>
+					</li>
+					<li>
+						<NavLink to="/making-of/example-id" className={({ isActive }) => (isActive ? "active" : "")}>
+							MAKING-OF
+						</NavLink>
+					</li>
+				</ul>
+			</div>
 		</nav>
 	);
 }

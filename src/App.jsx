@@ -8,7 +8,7 @@ import "./App.css";
 
 function App() {
 	return (
-		<>
+		<div className="wrapper">
 			<Navbar />
 			<Routes>
 				<Route path="/" element={<Home />} />
@@ -16,7 +16,7 @@ function App() {
 				<Route path="/making-of/:projectId" element={<MakingOf />} />
 			</Routes>
 			<Footer />
-		</>
+		</div>
 	);
 }
 
