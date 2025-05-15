@@ -19,7 +19,7 @@ function Navbar() {
 						</NavLink>
 					</li>
 					<li>
-						<NavLink to="/making-of/example-id" className={({ isActive }) => (isActive ? "active" : "")}>
+						<NavLink to="/making-of/beatrice-bjoko-devuurvogel" className={({ isActive }) => (window.location.pathname.startsWith("/making-of") ? "active" : "")}>
 							MAKING-OF
 						</NavLink>
 					</li>

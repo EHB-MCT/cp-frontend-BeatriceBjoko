@@ -1,7 +1,11 @@
+import SearchBar from "../components/SearchBar";
+import MakingOfDetails from "../components/MakingOfDetails";
+
 function MakingOf() {
 	return (
 		<div>
-			<h1>Making Of werkt!</h1>
+			<SearchBar />
+			<MakingOfDetails />
 		</div>
 	);
 }
