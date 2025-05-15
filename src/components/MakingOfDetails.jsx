@@ -35,7 +35,7 @@ function MakingOfDetails() {
 					<p>{fairytale.description || "Er is nog geen beschrijving toegevoegd."}</p>
 
 					{fairytale.fairytalelink && (
-						<a href={fairytale.fairytalelink} className="visit-button" target="_blank" rel="noopener noreferrer">
+						<a href={fairytale.fairytalelink} className="visit-button" target="_blank">
 							VISIT WEBSITE
 						</a>
 					)}
