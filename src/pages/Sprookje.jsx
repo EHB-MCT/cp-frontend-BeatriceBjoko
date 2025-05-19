@@ -1,14 +1,24 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import "../Sprookje.css";
 
 const Sprookje = () => {
 	const titleFirstPart = "de";
 	const titleSecondPart = "vuurvogel";
+
 	const letterRefs = useRef([]);
 	const secondLetterRefs = useRef([]);
 	const authorRef = useRef(null);
 	const buttonRef = useRef(null);
+
+	const chapterTitleRef = useRef(null);
+	const ivanRef = useRef(null);
+	const kaderRef = useRef(null);
+	const ivanTextRef = useRef(null);
+
+	const [storyStarted, setStoryStarted] = useState(false);
+
+	// Intro animatie
 
 	useEffect(() => {
 		// Animate title letters één voor één
@@ -58,6 +68,42 @@ const Sprookje = () => {
 		});
 	}, []);
 
+	// Animatie & scroll uitvoeren NA storyStarted true is
+
+	useEffect(() => {
+		if (storyStarted) {
+			const verhaalElement = document.getElementById("verhaal");
+			if (verhaalElement) {
+				verhaalElement.scrollIntoView({ behavior: "smooth" });
+			}
+
+			// start animatie na scroll
+			const tl = gsap.timeline({ delay: 1 });
+
+			tl.fromTo(chapterTitleRef.current, { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 1.5, ease: "power2.out" })
+				.to(chapterTitleRef.current, { opacity: 1, duration: 0.5 }) // blijft even staan
+				.to(chapterTitleRef.current, { opacity: 0, y: -30, duration: 1, ease: "power2.inOut" })
+				.fromTo(kaderRef.current, { opacity: 0 }, { opacity: 1, duration: 1 }, "<+0.2")
+				.fromTo(ivanRef.current, { x: "-100%", opacity: 0, y: 0 }, { x: "0%", opacity: 1, y: 0, duration: 2, ease: "power3.out" }, "-=0.2")
+				.to(
+					ivanRef.current,
+					{
+						y: -30,
+						duration: 1.5,
+						repeat: -1,
+						yoyo: true,
+						ease: "sine.inOut",
+					},
+					">"
+				)
+				.fromTo(ivanTextRef.current, { opacity: 0, y: 30 }, { opacity: 1, y: -80, duration: 1.5, ease: "power2.out" }, "-=1");
+		}
+	}, [storyStarted]);
+
+	const startStory = () => {
+		setStoryStarted(true);
+	};
+
 	return (
 		<div className="sprookje-container">
 			<div className="first-page">
@@ -83,11 +129,25 @@ const Sprookje = () => {
 						Bette Westera
 					</p>
 
-					<button ref={buttonRef} onClick={() => document.getElementById("verhaal").scrollIntoView({ behavior: "smooth" })}>
+					<button ref={buttonRef} onClick={startStory}>
 						Start het verhaal
 					</button>
 				</section>
 			</div>
+			{storyStarted && (
+				<section className="scene">
+					<h2 ref={chapterTitleRef} className="scene-title">
+						CHAPTER 1: THE DARK ORCHARD
+					</h2>
+					<div className="scene-content" id="verhaal">
+						<p ref={ivanTextRef} className="ivan-text">
+							Discover the story of Prince Ivan!
+						</p>
+						<img ref={kaderRef} src="/kader.png" alt="Kader" className="kader" />
+						<img ref={ivanRef} src="/prinsivan.png" alt="Prins Ivan" className="ivan" />
+					</div>
+				</section>
+			)}
 		</div>
 	);
 };
