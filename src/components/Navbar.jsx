@@ -2,9 +2,9 @@ import { NavLink } from "react-router-dom";
 import "../App.css";
 import logo from "../assets/logosprookje.svg";
 
-function Navbar() {
+function Navbar({ className }) {
 	return (
-		<nav className="navbar">
+		<nav className={`navbar ${className}`}>
 			<div className="wrapper">
 				<img src={logo} alt="Er Was Eens" className="logo" />
 				<ul className="nav-links">
