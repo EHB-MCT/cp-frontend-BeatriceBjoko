@@ -7,7 +7,7 @@ function MakingOfDetails() {
 	const [fairytale, setFairytale] = useState(null);
 
 	useEffect(() => {
-		fetch("/src/api/students.json")
+		fetch("/api/students.json")
 			.then((res) => res.json())
 			.then((data) => {
 				const selected = data.find((student) => student.id === projectId);
