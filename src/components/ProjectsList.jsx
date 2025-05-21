@@ -5,7 +5,7 @@ function ProjectsList() {
 	const [students, setStudents] = useState([]);
 
 	useEffect(() => {
-		fetch("/api/students.json")
+		fetch("/students.json")
 			.then((res) => res.json())
 			.then((data) => setStudents(data));
 	}, []);
