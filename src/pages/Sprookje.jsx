@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import "../Sprookje.css";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
 const Sprookje = () => {
 	const titleFirstPart = "de";
@@ -15,6 +17,8 @@ const Sprookje = () => {
 	const ivanRef = useRef(null);
 	const kaderRef = useRef(null);
 	const ivanTextRef = useRef(null);
+
+	const scene3Ref = useRef(null);
 
 	const [storyStarted, setStoryStarted] = useState(false);
 
@@ -74,7 +78,9 @@ const Sprookje = () => {
 		if (storyStarted) {
 			const verhaalElement = document.getElementById("verhaal");
 			if (verhaalElement) {
-				verhaalElement.scrollIntoView({ behavior: "smooth" });
+				setTimeout(() => {
+					verhaalElement.scrollIntoView({ behavior: "smooth" });
+				}, 300);
 			}
 
 			// start animatie na scroll
@@ -97,6 +103,24 @@ const Sprookje = () => {
 					">"
 				)
 				.fromTo(ivanTextRef.current, { opacity: 0, y: 30 }, { opacity: 1, y: -80, duration: 1.5, ease: "power2.out" }, "-=1");
+
+			// ScrollTrigger voor parallax scene
+			ScrollTrigger.create({
+				trigger: scene3Ref.current,
+				start: "top center",
+				end: "bottom top",
+				scrub: true,
+				onUpdate: (self) => {
+					const scroll = self.progress;
+					const gate = document.querySelector(".gate-layer");
+					const text = document.querySelector(".orchard-text");
+
+					if (gate && text) {
+						gsap.to(gate, { y: scroll * 150, ease: "none", overwrite: true });
+						gsap.to(text, { y: -scroll * 50, ease: "none", overwrite: true });
+					}
+				},
+			});
 		}
 	}, [storyStarted]);
 
@@ -135,18 +159,37 @@ const Sprookje = () => {
 				</section>
 			</div>
 			{storyStarted && (
-				<section className="scene">
-					<h2 ref={chapterTitleRef} className="scene-title">
-						CHAPTER 1: THE DARK ORCHARD
-					</h2>
-					<div className="scene-content" id="verhaal">
-						<p ref={ivanTextRef} className="ivan-text">
-							Discover the story of Prince Ivan!
-						</p>
-						<img ref={kaderRef} src="/kader.png" alt="Kader" className="kader" />
-						<img ref={ivanRef} src="/prinsivan.png" alt="Prins Ivan" className="ivan" />
-					</div>
-				</section>
+				<>
+					<section className="scene">
+						<h2 ref={chapterTitleRef} className="scene-title">
+							CHAPTER 1: THE DARK ORCHARD
+						</h2>
+						<div className="scene-content" id="verhaal">
+							<p ref={ivanTextRef} className="ivan-text">
+								Discover the story of Prince Ivan!
+							</p>
+							<img ref={kaderRef} src="/kader.png" alt="Kader" className="kader" />
+							<img ref={ivanRef} src="/prinsivan.png" alt="Prins Ivan" className="ivan" />
+						</div>
+					</section>
+
+					<section className="scene scene-3" ref={scene3Ref}>
+						<div className="parallax-scene-wrapper">
+							<img src="/green-background.png" alt="achtergrond" className="orchard-layer background-layer" />
+							<img src="/appletree.png" alt="tree with apples" className="tree-left" />
+							<img src="/appletree.png" alt="tree with apples" className="tree-right" />
+							<img src="/gate.png" alt="gate" className="orchard-layer gate-layer" />
+
+							<div className="orchard-text">
+								<p>
+									<span className="orchard-highlight">P</span>rins Ivan stond voor een hoge poort.
+									<br />
+									Achter het hek: een donkere boomgaard, stil en betoverd.
+								</p>
+							</div>
+						</div>
+					</section>
+				</>
 			)}
 		</div>
 	);

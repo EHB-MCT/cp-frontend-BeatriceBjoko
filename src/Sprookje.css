@@ -1,20 +1,24 @@
+body {
+	margin: 0;
+	padding: 0;
+}
+
 .sprookje-container {
-	min-height: 100vh;
 	width: 100%;
 	margin: 0;
 	padding: 0;
 	overflow-x: hidden;
-	background-image: url("/background-landing.jpg");
-	background-size: cover;
-	background-position: center;
-	background-repeat: no-repeat;
 }
 
 .first-page {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	height: calc(100vh - 90px);
+	height: 100vh;
+	background-image: url("/background-landing.jpg"); /* ✅ hierheen */
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
 }
 
 .intro {
@@ -68,14 +72,15 @@ button:hover {
 
 .scene {
 	min-height: 100vh;
-	background: white;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
 	position: relative;
 	overflow: hidden;
-	padding: 40px 0;
+	background: transparent;
+	padding: 0;
+	margin: 0;
 }
 
 .scene-title {
@@ -131,4 +136,93 @@ button:hover {
 	background-color: rgba(164, 74, 63, 0.7);
 	padding: 12px 24px;
 	border-radius: 12px;
+}
+
+/* PARALLAX SCENE */
+.scene-3 {
+	min-height: 100vh;
+	position: relative;
+	padding: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+}
+
+.parallax-scene-wrapper {
+	position: relative;
+	width: 100%;
+	height: 120vh;
+	overflow: hidden;
+	padding-bottom: 10vh;
+}
+
+.background-layer {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	z-index: 1;
+}
+
+.gate-layer {
+	position: absolute;
+	bottom: 80px;
+	left: 50%;
+	transform: translate(-50%);
+	width: 100%;
+	max-width: none;
+	z-index: 3;
+}
+
+.orchard-text {
+	position: absolute;
+	top: 15%;
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: 2;
+	color: black;
+	font-size: 26pt;
+	text-align: center;
+	font-family: "Open Sans", serif;
+}
+
+.orchard-highlight {
+	color: #f7b801;
+	font-family: "Great Vibes", cursive;
+	margin-right: 6px;
+	font-size: 40pt;
+}
+
+.tree-left {
+	position: absolute;
+	bottom: -25px;
+	left: 3%;
+	height: 85vh;
+	z-index: 2;
+	animation: sway 4s ease-in-out infinite alternate;
+	transform-origin: bottom center;
+}
+
+@keyframes sway {
+	0% {
+		transform: rotate(-1.2deg);
+	}
+	100% {
+		transform: rotate(1.2deg);
+	}
+}
+
+.tree-right {
+	position: absolute;
+	bottom: -25px;
+	right: 3%;
+	height: 85vh;
+	transform: scaleX(-1);
+	z-index: 2;
+	animation: sway 4s ease-in-out infinite alternate;
+	animation-delay: 1s;
+	transform-origin: bottom center;
 }
