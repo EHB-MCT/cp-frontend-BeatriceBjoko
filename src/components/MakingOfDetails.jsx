@@ -17,7 +17,7 @@ function MakingOfDetails() {
 	}, [projectId]);
 
 	if (!fairytale) {
-		return <p>Loading...</p>;
+		return <p>Loading making-of...</p>;
 	}
 
 	return (
