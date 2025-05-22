@@ -1,11 +1,11 @@
-import logo from "../assets/logosprookje.svg";
 import "../App.css";
+import { withBase } from "../utils/helpers";
 
 function Footer() {
 	return (
 		<footer className="footer">
 			<div className="footer-logo">
-				<img src={logo} alt="Er Was Eens logo" />
+				<img src={withBase("/assets/logosprookje.svg")} alt="Er Was Eens logo" />
 			</div>
 
 			<div className="footer-about">

@@ -1,13 +1,14 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import YoutubeEmbed from "./YoutubeEmbed";
+import { withBase } from "../utils/helpers";
 
 function MakingOfDetails() {
 	const { projectId } = useParams();
 	const [fairytale, setFairytale] = useState(null);
 
 	useEffect(() => {
-		fetch("/cp-frontend-BeatriceBjoko/students.json")
+		fetch("/api/students.json")
 			.then((res) => res.json())
 			.then((data) => {
 				const selected = data.find((student) => student.id === projectId);
@@ -22,7 +23,7 @@ function MakingOfDetails() {
 	return (
 		<div className="making-of wrapper">
 			<h2>MAKING-OF — {fairytale.fairytale.toUpperCase()}</h2>
-			<img src={fairytale.imgBanner} alt={fairytale.fairytale} className="banner" />
+			<img src={withBase(fairytale.imgBanner)} alt={fairytale.fairytale} className="banner" />
 
 			<div className="making-of-content">
 				<div className="video-section">
