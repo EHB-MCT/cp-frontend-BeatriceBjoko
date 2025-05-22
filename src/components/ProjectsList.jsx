@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 import ProjectCard from "./ProjectCard";
+import { withBase } from "../utils/helpers";
 
 function ProjectsList() {
 	const [students, setStudents] = useState([]);
 
 	useEffect(() => {
-		fetch("/api/students.json")
+		fetch(withBase("api/students.json"))
 			.then((res) => res.json())
 			.then((data) => setStudents(data));
 	}, []);

@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import ProjectCard from "./ProjectCard";
+import { withBase } from "../utils/helpers";
 
 function Spotlight() {
 	const [students, setStudents] = useState([]);
 
 	useEffect(() => {
-		fetch("/api/students.json")
+		fetch(withBase("api/students.json"))
 			.then((res) => res.json())
 			.then((data) => {
 				// 4 willekeurige sprookjes

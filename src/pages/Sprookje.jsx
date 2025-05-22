@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import "../Sprookje.css";
+import { withBase } from "../utils/helpers";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
@@ -130,7 +131,15 @@ const Sprookje = () => {
 
 	return (
 		<div className="sprookje-container">
-			<div className="first-page">
+			<div
+				className="first-page"
+				style={{
+					backgroundImage: `url(${withBase("/background-landing.jpg")})`,
+					backgroundSize: "cover",
+					backgroundPosition: "center",
+					backgroundRepeat: "no-repeat",
+				}}
+			>
 				<section className="intro">
 					<div className="title-spacing">
 						<h1 className="vuurvogel-title">
@@ -168,17 +177,17 @@ const Sprookje = () => {
 							<p ref={ivanTextRef} className="ivan-text">
 								Discover the story of Prince Ivan!
 							</p>
-							<img ref={kaderRef} src="/kader.png" alt="Kader" className="kader" />
-							<img ref={ivanRef} src="/prinsivan.png" alt="Prins Ivan" className="ivan" />
+							<img ref={kaderRef} src={withBase("/kader.png")} alt="Kader" className="kader" />
+							<img ref={ivanRef} src={withBase("/prinsivan.png")} alt="Prins Ivan" className="ivan" />
 						</div>
 					</section>
 
 					<section className="scene scene-3" ref={scene3Ref}>
 						<div className="parallax-scene-wrapper">
-							<img src="/green-background.png" alt="achtergrond" className="orchard-layer background-layer" />
-							<img src="/appletree.png" alt="tree with apples" className="tree-left" />
-							<img src="/appletree.png" alt="tree with apples" className="tree-right" />
-							<img src="/gate.png" alt="gate" className="orchard-layer gate-layer" />
+							<img src={withBase("/green-background.png")} alt="achtergrond" className="orchard-layer background-layer" />
+							<img src={withBase("/appletree.png")} alt="tree with apples" className="tree-left" />
+							<img src={withBase("/appletree.png")} alt="tree with apples" className="tree-right" />
+							<img src={withBase("/gate.png")} alt="gate" className="orchard-layer gate-layer" />
 
 							<div className="orchard-text">
 								<p>
