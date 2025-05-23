@@ -93,6 +93,15 @@ button:hover {
 	z-index: 3;
 }
 
+.scene-4 .scene-title {
+	color: #a44a3f;
+	text-shadow: 0 0 12px rgba(255, 105, 0, 0.2);
+	font-family: "Cinzel", serif;
+	font-weight: bold;
+	font-size: 36px;
+	transform: translateX(-50%);
+}
+
 .scene-content {
 	position: relative;
 	width: 100%;
@@ -221,4 +230,82 @@ button:hover {
 	animation: sway 4s ease-in-out infinite alternate;
 	animation-delay: 1s;
 	transform-origin: bottom center;
+}
+
+/* THE FEATHERS */
+
+.feather-container {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	pointer-events: none;
+	z-index: 5;
+	overflow: visible;
+}
+
+.feather {
+	position: absolute;
+	opacity: 0;
+	pointer-events: none;
+}
+
+.scene-4 {
+	position: relative;
+	min-height: 100vh;
+	background-color: #fff5f0;
+	overflow: hidden;
+}
+
+.feather-field {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+/* FIREBIRD REVEAL */
+
+.firebird-reveal-scene {
+	position: relative;
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	align-items: flex-end;
+	justify-content: center;
+	background-color: #fff5f0;
+	overflow: hidden;
+}
+
+.mushroom-wrapper {
+	cursor: grab;
+	display: inline-block;
+}
+
+.mushroom {
+	position: absolute;
+	bottom: 0;
+	width: 40vw;
+	max-width: 400px;
+	cursor: grab;
+	user-select: none;
+	z-index: 2;
+}
+
+.mushroom-left {
+	left: 28%;
+}
+
+.mushroom-right {
+	right: 28%;
+}
+
+.firebird {
+	position: absolute;
+	bottom: 20%;
+	width: 25vw;
+	max-width: 300px;
+	z-index: 1;
+	opacity: 0;
+	transform: scale(0.8);
 }

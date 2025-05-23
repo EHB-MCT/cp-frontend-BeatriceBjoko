@@ -2,7 +2,10 @@ import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import "../Sprookje.css";
 import { withBase } from "../utils/helpers";
+import FeatherFloat from "../components/sprookje/FeatherFloat";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import ChapterTitle from "../components/sprookje/ChapterTitle";
+import FirebirdReveal from "../components/sprookje/FirebirdReveal";
 gsap.registerPlugin(ScrollTrigger);
 
 const Sprookje = () => {
@@ -134,7 +137,7 @@ const Sprookje = () => {
 			<div
 				className="first-page"
 				style={{
-					backgroundImage: `url(${withBase("/background-landing.jpg")})`,
+					backgroundImage: `url(${withBase("assets/background-landing.jpg")})`,
 					backgroundSize: "cover",
 					backgroundPosition: "center",
 					backgroundRepeat: "no-repeat",
@@ -177,17 +180,17 @@ const Sprookje = () => {
 							<p ref={ivanTextRef} className="ivan-text">
 								Discover the story of Prince Ivan!
 							</p>
-							<img ref={kaderRef} src={withBase("/kader.png")} alt="Kader" className="kader" />
-							<img ref={ivanRef} src={withBase("/prinsivan.png")} alt="Prins Ivan" className="ivan" />
+							<img ref={kaderRef} src={withBase("assets/kader.png")} alt="Kader" className="kader" />
+							<img ref={ivanRef} src={withBase("assets/prinsivan.png")} alt="Prins Ivan" className="ivan" />
 						</div>
 					</section>
 
 					<section className="scene scene-3" ref={scene3Ref}>
 						<div className="parallax-scene-wrapper">
-							<img src={withBase("/green-background.png")} alt="achtergrond" className="orchard-layer background-layer" />
-							<img src={withBase("/appletree.png")} alt="tree with apples" className="tree-left" />
-							<img src={withBase("/appletree.png")} alt="tree with apples" className="tree-right" />
-							<img src={withBase("/gate.png")} alt="gate" className="orchard-layer gate-layer" />
+							<img src={withBase("assets/green-background.png")} alt="achtergrond" className="orchard-layer background-layer" />
+							<img src={withBase("assets/appletree.png")} alt="tree with apples" className="tree-left" />
+							<img src={withBase("assets/appletree.png")} alt="tree with apples" className="tree-right" />
+							<img src={withBase("assets/gate.png")} alt="gate" className="orchard-layer gate-layer" />
 
 							<div className="orchard-text">
 								<p>
@@ -197,6 +200,12 @@ const Sprookje = () => {
 								</p>
 							</div>
 						</div>
+					</section>
+
+					<section className="scene scene-4">
+						<ChapterTitle text="CHAPTER 2: The Firebird Appears" />
+						<FeatherFloat />
+						<FirebirdReveal />
 					</section>
 				</>
 			)}
