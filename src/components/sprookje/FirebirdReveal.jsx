@@ -52,7 +52,27 @@ const FirebirdReveal = () => {
 	useEffect(() => {
 		if (leftDragged >= MAX_DRAG && rightDragged >= MAX_DRAG && !birdVisible) {
 			setBirdVisible(true);
+
 			gsap.fromTo(birdRef.current, { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, duration: 1.2, ease: "power2.out" });
+
+			gsap.to(birdRef.current, {
+				keyframes: [
+					{ filter: "drop-shadow(0 0 5px orange)", duration: 0.6 },
+					{ filter: "drop-shadow(0 0 10px yellow)", duration: 0.6 },
+					{ filter: "drop-shadow(0 0 15px red)", duration: 0.6 },
+					{ filter: "drop-shadow(0 0 10px orange)", duration: 0.6 },
+				],
+				repeat: -1,
+				yoyo: true,
+				ease: "sine.inOut",
+			});
+			gsap.to(birdRef.current, {
+				y: -10,
+				duration: 2,
+				repeat: -1,
+				yoyo: true,
+				ease: "sine.inOut",
+			});
 		}
 	}, [leftDragged, rightDragged, birdVisible]);
 

@@ -6,6 +6,8 @@ import FeatherFloat from "../components/sprookje/FeatherFloat";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import ChapterTitle from "../components/sprookje/ChapterTitle";
 import FirebirdReveal from "../components/sprookje/FirebirdReveal";
+import ScrollRevealText from "../components/sprookje/ScrollRevealText";
+
 gsap.registerPlugin(ScrollTrigger);
 
 const Sprookje = () => {
@@ -23,6 +25,9 @@ const Sprookje = () => {
 	const ivanTextRef = useRef(null);
 
 	const scene3Ref = useRef(null);
+
+	const chapter2Ref = useRef(null);
+	const scene4Ref = useRef(null);
 
 	const [storyStarted, setStoryStarted] = useState(false);
 
@@ -202,8 +207,9 @@ const Sprookje = () => {
 						</div>
 					</section>
 
-					<section className="scene scene-4">
-						<ChapterTitle text="CHAPTER 2: The Firebird Appears" />
+					<section className="scene scene-4" ref={scene4Ref}>
+						<ChapterTitle ref={chapter2Ref} text="CHAPTER 2: The Firebird Appears" />
+						<ScrollRevealText text="Can you drag the mushrooms? Something magical might appear!" triggerRef={chapter2Ref} />
 						<FeatherFloat />
 						<FirebirdReveal />
 					</section>
