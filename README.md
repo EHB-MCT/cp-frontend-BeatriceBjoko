@@ -22,4 +22,8 @@ Bijvoorbeeld, in de veer-scène (scène 4) wordt elke veer: willekeurig gepositi
 -[scroll reveal](https://www.reactbits.dev/text-animations/scroll-reveal) -> Gebruikt in mijn component: ScrollRevealText.js.
 Ik heb me laten inspireren door dit codevoorbeeld om hetzelfde effect te bekomen.
 
+-[mousemove](https://javascript.info/mouse-drag-and-drop) (https://developer.mozilla.org/en-US/docs/Web/API/Element/mousemove_event) in FirebirdReveal.jsx
+
+-[JS events: mousedown, mousemove, mouseup](https://www.youtube.com/watch?v=T-x8dDHS35o&ab_channel=CreativeDeveloper) -> in FirebirdReveal.jsx
+
 -[Gsap: keyframes + CSS properties](https://gsap.com/resources/keyframes/) (https://gsap.com/docs/v3/GSAP/CorePlugins/CSS/) -> Gebruikt in mijn component: ScrollRevealText.js → om mijn vuurvogel een stralend, wisselend effect te geven.

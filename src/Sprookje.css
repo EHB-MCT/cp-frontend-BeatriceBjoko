@@ -322,6 +322,7 @@ button:hover {
 	margin-bottom: 20px;
 	line-height: 1.6;
 	z-index: 4;
+	pointer-events: none;
 }
 
 /* Elk woord apart behandelen voor animatie */
@@ -329,4 +330,32 @@ button:hover {
 	display: inline-block;
 	white-space: pre; /* behoud spaties */
 	will-change: opacity, filter, transform;
+}
+
+.falling-feather {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 80px;
+	pointer-events: none;
+	z-index: 4;
+}
+
+.firebird-texts {
+	width: 80%;
+	margin: 0 auto;
+	text-align: center;
+	z-index: 5;
+	pointer-events: none;
+}
+
+.scene-5 {
+	position: relative;
+	min-height: 100vh;
+	background-color: #fff5f0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 }

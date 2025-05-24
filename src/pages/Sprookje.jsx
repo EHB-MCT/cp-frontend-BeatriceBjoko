@@ -30,6 +30,7 @@ const Sprookje = () => {
 	const scene4Ref = useRef(null);
 
 	const [storyStarted, setStoryStarted] = useState(false);
+	const [showScene5, setShowScene5] = useState(false);
 
 	// Intro animatie
 
@@ -211,8 +212,18 @@ const Sprookje = () => {
 						<ChapterTitle ref={chapter2Ref} text="CHAPTER 2: The Firebird Appears" />
 						<ScrollRevealText text="Can you drag the mushrooms? Something magical might appear!" triggerRef={chapter2Ref} />
 						<FeatherFloat />
-						<FirebirdReveal />
+						<FirebirdReveal onRevealComplete={() => setShowScene5(true)} />
 					</section>
+
+					{showScene5 && (
+						<section className="scene scene-5">
+							<div className="firebird-texts">
+								<ScrollRevealText text="The Firebird escapes from Prince Ivan." />
+								<ScrollRevealText text="The Firebird has dropped a feather." />
+								<ScrollRevealText text="Perhaps this will be useful later?" />
+							</div>
+						</section>
+					)}
 				</>
 			)}
 		</div>
