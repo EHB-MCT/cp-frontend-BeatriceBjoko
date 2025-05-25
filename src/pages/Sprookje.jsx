@@ -7,6 +7,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import ChapterTitle from "../components/sprookje/ChapterTitle";
 import FirebirdReveal from "../components/sprookje/FirebirdReveal";
 import ScrollRevealText from "../components/sprookje/ScrollRevealText";
+import ScenePrincesses from "../components/sprookje/ScenePrincesses";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -31,6 +32,7 @@ const Sprookje = () => {
 
 	const [storyStarted, setStoryStarted] = useState(false);
 	const [showScene5, setShowScene5] = useState(false);
+	const [showScene6, setShowScene6] = useState(false);
 
 	// Intro animatie
 
@@ -220,10 +222,22 @@ const Sprookje = () => {
 							<div className="firebird-texts">
 								<ScrollRevealText text="The Firebird escapes from Prince Ivan." />
 								<ScrollRevealText text="The Firebird has dropped a feather." />
-								<ScrollRevealText text="Perhaps this will be useful later?" />
+								<ScrollRevealText
+									text="Perhaps this will be useful later?"
+									onComplete={() => {
+										setShowScene6(true);
+										setTimeout(() => {
+											const princessScene = document.querySelector(".scene-6");
+											if (princessScene) {
+												princessScene.scrollIntoView({ behavior: "smooth" });
+											}
+										}, 300);
+									}}
+								/>
 							</div>
 						</section>
 					)}
+					{showScene6 && <ScenePrincesses />}
 				</>
 			)}
 		</div>

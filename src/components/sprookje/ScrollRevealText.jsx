@@ -5,7 +5,7 @@ import "../../Sprookje.css";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const ScrollRevealText = ({ text, triggerRef }) => {
+const ScrollRevealText = ({ text, triggerRef, onComplete }) => {
 	const containerRef = useRef(null);
 
 	const splitText = useMemo(() => {
@@ -23,6 +23,8 @@ const ScrollRevealText = ({ text, triggerRef }) => {
 		const el = containerRef.current;
 		const trigger = triggerRef?.current || el;
 
+		ScrollTrigger.refresh();
+
 		gsap.fromTo(
 			el,
 			{ opacity: 0 },
@@ -38,27 +40,26 @@ const ScrollRevealText = ({ text, triggerRef }) => {
 			}
 		);
 
-		// 2. Scrub voor woord-per-woord effect
+		// Scrub voor woord-per-woord effect
 		const wordEls = el.querySelectorAll(".word");
 
-		gsap.fromTo(
-			wordEls,
-			{ opacity: 0.1, y: 20, filter: "blur(10px)" },
-			{
-				opacity: 1,
-				y: 0,
-				filter: "blur(0px)",
-				stagger: 0.05,
-				ease: "none",
-				scrollTrigger: {
-					trigger,
-					start: "top bottom",
-					end: "bottom center",
-					scrub: 0.4,
-				},
-			}
-		);
-	}, [triggerRef]);
+		// Timeline met callback wanneer klaar
+		const tl = gsap.timeline({
+			scrollTrigger: {
+				trigger,
+				start: "top bottom",
+				end: "bottom center",
+				scrub: 0.4,
+			},
+			onComplete: () => {
+				if (typeof onComplete === "function") {
+					onComplete();
+				}
+			},
+		});
+
+		tl.fromTo(wordEls, { opacity: 0.1, y: 20, filter: "blur(10px)" }, { opacity: 1, y: 0, filter: "blur(0px)", stagger: 0.05, ease: "none" });
+	}, [triggerRef, onComplete]);
 
 	return (
 		<p ref={containerRef} className="scroll-reveal-text drag-hint-text">

@@ -352,10 +352,57 @@ button:hover {
 
 .scene-5 {
 	position: relative;
-	min-height: 100vh;
+	min-height: 140vh;
 	background-color: #fff5f0;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+}
+
+/* prinses scene */
+
+.gate-container {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: auto;
+	z-index: 3;
+	pointer-events: none;
+}
+
+.castle-gate {
+	width: 50vw;
+	height: auto;
+	max-height: 80vh;
+	transition: transform 1s ease-in-out;
+	position: absolute;
+	bottom: 0;
+}
+
+.castle-gate.left {
+	left: 0;
+	transform: translateX(0);
+}
+
+.castle-gate.right {
+	right: 0;
+	transform: translateX(0);
+}
+
+.princesses-wrapper {
+	position: relative;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: flex-end;
+	gap: 24px;
+	z-index: 1;
+}
+
+.princess-silhouette {
+	width: 320px;
+	opacity: 0;
+	transform: translateX(-200px);
 }
