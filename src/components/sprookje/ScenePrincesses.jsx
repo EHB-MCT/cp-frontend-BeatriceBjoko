@@ -3,8 +3,10 @@ import gsap from "gsap";
 import ChapterTitle from "./ChapterTitle";
 import { withBase } from "../../utils/helpers";
 import ScrollRevealText from "./ScrollRevealText";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
-const ScenePrincesses = () => {
+const ScenePrincesses = ({ onSceneEnd }) => {
 	const chapterRef = useRef(null);
 	const leftGateRef = useRef(null);
 	const rightGateRef = useRef(null);
@@ -51,6 +53,8 @@ const ScenePrincesses = () => {
 				duration: 0.8,
 				onComplete: () => {
 					ScrollTrigger.refresh();
+					// scene klaar → volgende tonen
+					if (onSceneEnd) onSceneEnd();
 				},
 			},
 			">"
@@ -81,10 +85,10 @@ const ScenePrincesses = () => {
 			</div>
 
 			<div className="firebird-texts" ref={textsRef} style={{ opacity: 0 }}>
-				<ScrollRevealText text="In the orchard, he sees 12 princesses." triggerRef={textsRef} />
-				<ScrollRevealText text="A princess warns him about the immortal giant Kashei." triggerRef={textsRef} />
-				<ScrollRevealText text="He turns everyone who enters to stone." triggerRef={textsRef} />
-				<ScrollRevealText text="Unafraid, Prince Ivan feels the Firebird’s feather glow in his pocket." triggerRef={textsRef} />
+				<ScrollRevealText text="In the orchard, he sees 12 princesses." triggerRef={textsRef} className="princesses-text" />
+				<ScrollRevealText text="A princess warns him about the immortal giant Kashei." triggerRef={textsRef} className="princesses-text" />
+				<ScrollRevealText text="He turns everyone who enters to stone." triggerRef={textsRef} className="princesses-text" />
+				<ScrollRevealText text="Unafraid, Prince Ivan feels the Firebird’s feather glow in his pocket." triggerRef={textsRef} className="princesses-text" />
 			</div>
 		</section>
 	);

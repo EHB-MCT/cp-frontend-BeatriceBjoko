@@ -406,3 +406,40 @@ button:hover {
 	opacity: 0;
 	transform: translateX(-200px);
 }
+
+.princesses-text {
+	color: white;
+}
+
+/* kashei scene */
+
+.kashei-scene {
+	position: relative;
+	min-height: 130vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+}
+
+.kashei-wrapper {
+	position: relative;
+	z-index: 2;
+}
+
+.kashei-img {
+	width: 60vw;
+	max-width: 800px;
+	transform-origin: center bottom;
+}
+
+.light-title {
+	color: white;
+	text-shadow: 0 0 12px rgba(255, 255, 255, 0.6);
+}
+
+.kashei-text {
+	color: white;
+	text-shadow: 0 0 12px rgba(255, 255, 255, 0.3);
+}

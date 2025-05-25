@@ -5,7 +5,7 @@ import "../../Sprookje.css";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const ScrollRevealText = ({ text, triggerRef, onComplete }) => {
+const ScrollRevealText = ({ text, triggerRef, onComplete, className = "" }) => {
 	const containerRef = useRef(null);
 
 	const splitText = useMemo(() => {
@@ -62,7 +62,7 @@ const ScrollRevealText = ({ text, triggerRef, onComplete }) => {
 	}, [triggerRef, onComplete]);
 
 	return (
-		<p ref={containerRef} className="scroll-reveal-text drag-hint-text">
+		<p ref={containerRef} className={`scroll-reveal-text drag-hint-text ${className}`}>
 			{splitText}
 		</p>
 	);

@@ -8,6 +8,7 @@ import ChapterTitle from "../components/sprookje/ChapterTitle";
 import FirebirdReveal from "../components/sprookje/FirebirdReveal";
 import ScrollRevealText from "../components/sprookje/ScrollRevealText";
 import ScenePrincesses from "../components/sprookje/ScenePrincesses";
+import SceneKashei from "../components/sprookje/SceneKashei";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -33,6 +34,7 @@ const Sprookje = () => {
 	const [storyStarted, setStoryStarted] = useState(false);
 	const [showScene5, setShowScene5] = useState(false);
 	const [showScene6, setShowScene6] = useState(false);
+	const [showScene7, setShowScene7] = useState(false);
 
 	// Intro animatie
 
@@ -237,7 +239,22 @@ const Sprookje = () => {
 							</div>
 						</section>
 					)}
-					{showScene6 && <ScenePrincesses />}
+
+					{showScene6 && (
+						<ScenePrincesses
+							onSceneEnd={() => {
+								setShowScene7(true);
+								setTimeout(() => {
+									const kasheiScene = document.querySelector(".scene-7");
+									if (kasheiScene) {
+										kasheiScene.scrollIntoView({ behavior: "smooth" });
+									}
+								}, 300);
+							}}
+						/>
+					)}
+
+					{showScene7 && <SceneKashei />}
 				</>
 			)}
 		</div>

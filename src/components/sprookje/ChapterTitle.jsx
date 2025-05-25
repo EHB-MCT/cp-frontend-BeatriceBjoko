@@ -4,7 +4,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const ChapterTitle = forwardRef(({ text }, ref) => {
+const ChapterTitle = forwardRef(({ text, className = "" }, ref) => {
 	const titleRef = useRef(null);
 
 	useEffect(() => {
@@ -24,7 +24,7 @@ const ChapterTitle = forwardRef(({ text }, ref) => {
 
 	return (
 		<div ref={ref}>
-			<h2 ref={titleRef} className="scene-title">
+			<h2 ref={titleRef} className={`scene-title ${className}`}>
 				{text}
 			</h2>
 		</div>
