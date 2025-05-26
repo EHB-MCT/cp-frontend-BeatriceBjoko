@@ -46,6 +46,24 @@ body {
 	margin-right: 8px;
 }
 
+/* music */
+
+.music-toggle-btn {
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	z-index: 1000;
+	background: none;
+	border: none;
+	cursor: pointer;
+	padding: 4px;
+}
+
+.music-toggle-btn img {
+	width: 20px;
+	height: 20px;
+}
+
 .first-page {
 	display: flex;
 	align-items: center;

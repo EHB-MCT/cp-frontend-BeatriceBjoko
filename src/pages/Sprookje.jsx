@@ -11,6 +11,7 @@ import ScenePrincesses from "../components/sprookje/ScenePrincesses";
 import SceneKashei from "../components/sprookje/SceneKashei";
 import SceneFirebirdDance from "../components/sprookje/SceneFirebirdDance";
 import RetourKnop from "../components/sprookje/RetourKnop";
+import MusicToggleButton from "../components/sprookje/MusicToggleButton";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -267,6 +268,7 @@ const Sprookje = () => {
 					)}
 				</>
 			)}
+			<MusicToggleButton />
 		</div>
 	);
 };
