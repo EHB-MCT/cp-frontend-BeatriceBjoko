@@ -9,6 +9,7 @@ import FirebirdReveal from "../components/sprookje/FirebirdReveal";
 import ScrollRevealText from "../components/sprookje/ScrollRevealText";
 import ScenePrincesses from "../components/sprookje/ScenePrincesses";
 import SceneKashei from "../components/sprookje/SceneKashei";
+import SceneFirebirdDance from "../components/sprookje/SceneFirebirdDance";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -254,7 +255,12 @@ const Sprookje = () => {
 						/>
 					)}
 
-					{showScene7 && <SceneKashei />}
+					{showScene7 && (
+						<>
+							<SceneKashei />
+							<SceneFirebirdDance />
+						</>
+					)}
 				</>
 			)}
 		</div>
