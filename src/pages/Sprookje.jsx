@@ -10,6 +10,7 @@ import ScrollRevealText from "../components/sprookje/ScrollRevealText";
 import ScenePrincesses from "../components/sprookje/ScenePrincesses";
 import SceneKashei from "../components/sprookje/SceneKashei";
 import SceneFirebirdDance from "../components/sprookje/SceneFirebirdDance";
+import RetourKnop from "../components/sprookje/RetourKnop";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -154,32 +155,35 @@ const Sprookje = () => {
 					backgroundRepeat: "no-repeat",
 				}}
 			>
-				<section className="intro">
-					<div className="title-spacing">
-						<h1 className="vuurvogel-title">
-							{titleFirstPart.split("").map((character, i) => (
-								<span key={i} ref={(element) => (letterRefs.current[i] = element)} style={{ display: "inline-block" }}>
-									{character}
-								</span>
-							))}
-						</h1>
-						<h1 className="vuurvogel-title">
-							{titleSecondPart.split("").map((character, i) => (
-								<span key={i} ref={(element) => (secondLetterRefs.current[i] = element)} style={{ display: "inline-block" }}>
-									{character}
-								</span>
-							))}
-						</h1>
-					</div>
+				<div className="intro-wrapper">
+					<RetourKnop />
+					<section className="intro">
+						<div className="title-spacing">
+							<h1 className="vuurvogel-title">
+								{titleFirstPart.split("").map((character, i) => (
+									<span key={i} ref={(element) => (letterRefs.current[i] = element)} style={{ display: "inline-block" }}>
+										{character}
+									</span>
+								))}
+							</h1>
+							<h1 className="vuurvogel-title">
+								{titleSecondPart.split("").map((character, i) => (
+									<span key={i} ref={(element) => (secondLetterRefs.current[i] = element)} style={{ display: "inline-block" }}>
+										{character}
+									</span>
+								))}
+							</h1>
+						</div>
 
-					<p ref={authorRef} className="auteur">
-						Bette Westera
-					</p>
+						<p ref={authorRef} className="auteur">
+							Bette Westera
+						</p>
 
-					<button ref={buttonRef} onClick={startStory}>
-						Start het verhaal
-					</button>
-				</section>
+						<button ref={buttonRef} onClick={startStory}>
+							Start het verhaal
+						</button>
+					</section>
+				</div>
 			</div>
 			{storyStarted && (
 				<>
