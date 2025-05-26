@@ -227,17 +227,10 @@ button:hover {
 	left: 50%;
 	transform: translateX(-50%);
 	z-index: 2;
-	color: black;
-	font-size: 26pt;
+	color: white;
+	font-size: 23pt;
 	text-align: center;
 	font-family: "Open Sans", serif;
-}
-
-.orchard-highlight {
-	color: #f7b801;
-	font-family: "Great Vibes", cursive;
-	margin-right: 6px;
-	font-size: 40pt;
 }
 
 .tree-left {
@@ -364,7 +357,7 @@ button:hover {
 /* Elk woord apart behandelen voor animatie */
 .word {
 	display: inline-block;
-	white-space: pre; /* behoud spaties */
+	white-space: pre;
 	will-change: opacity, filter, transform;
 }
 

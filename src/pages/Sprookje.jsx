@@ -209,9 +209,9 @@ const Sprookje = () => {
 
 							<div className="orchard-text">
 								<p>
-									<span className="orchard-highlight">P</span>rins Ivan stond voor een hoge poort.
+									Prince Ivan stood before a tall gate.
 									<br />
-									Achter het hek: een donkere boomgaard, stil en betoverd.
+									Behind the fence: a dark orchard, silent and enchanting.
 								</p>
 							</div>
 						</div>
