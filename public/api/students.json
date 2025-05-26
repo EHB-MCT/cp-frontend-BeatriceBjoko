@@ -60,7 +60,7 @@
 		"videoExplainer": "gcwJyZ0tgEI",
 		"imgThumbnail": "/assets/thumbnail_devuurvogel.png",
 		"imgBanner": "/assets/vuurvogel-banner.png",
-		"imgsExtra": ["", "", ""],
+		"imgsExtra": ["/assets/extra-image1.png", "/assets/extra-image2.png", "/assets/extra-image3.png"],
 		"genre": "",
 		"storyFrom": "Igor Stravinski"
 	},
