@@ -1,6 +1,15 @@
-# React + Vite
+# Vuurvogel — Interactieve Parallax Sprookjeswebsite
 
-## SOURCES
+In een donkere boomgaard ontmoet prins Ivan een magische vuurvogel. Ze schenkt hem een veer met bijzondere kracht. Die veer helpt hem om de twaalf gevangen prinsessen te bevrijden uit de greep van de onsterfelijke reus Kashei. Met moed, magie en de betoverende dans van de vuurvogel verslaat Ivan de reus, en brengt hij licht en liefde terug in de boomgaard.
+
+# Project Setup
+
+1. Kloon de repository: git clone https://github.com/EHB-MCT/cp-frontend-BeatriceBjoko
+2. Navigeer naar de projectmap: cd cp-frontend-BeatriceBjoko
+3. Installeer de dependencies: npm install
+4. Start de ontwikkelserver: npm run dev
+
+## BRONNEN
 
 - [NavLink](https://reactrouter.com/api/components/NavLink) -> In Navbar.jsx -> line 1-24
 - [NavLink](https://api.reactrouter.com/v7/functions/react_router.NavLink.html) -> Navbar.jsx -> line 1-24
@@ -16,7 +25,6 @@
 -[React refresh problem](https://www.youtube.com/watch?v=fuGu-Ponjf8&ab_channel=ToThePointCode) -> bij het refreshen: 404 error
 
 -[GSAP ScrollTrigger](https://gsap.com/docs/v3/Plugins/ScrollTrigger/) -> Om dynamische animaties bij het scrollen te maken, heb ik GSAP ScrollTrigger gebruikt. Deze plugin maakt het mogelijk om elementen te animeren op basis van de scrollpositie van de gebruiker.
-
 Bijvoorbeeld, in de veer-scène (scène 4) wordt elke veer: willekeurig gepositioneerd op het scherm en geanimeerd om naar boven te zweven met een subtiele links/rechts-beweging.
 
 -[scroll reveal](https://www.reactbits.dev/text-animations/scroll-reveal) -> Gebruikt in mijn component: ScrollRevealText.js.
@@ -31,3 +39,5 @@ Ik heb me laten inspireren door dit codevoorbeeld om hetzelfde effect te bekomen
 -[GSAP: ScrollTrigger.refresh()](<https://gsap.com/docs/v3/Plugins/ScrollTrigger/refresh()/>) -> In de prinsessenscène wou ik pas nadat de 12 prinsessen verschenen zijn (na een GSAP-timeline) de bijhorende tekstregels (met het ScrollRevealText-component) laten animeren bij scroll. Maar: de zinnen staan onzichtbaar (opacity: 0) bij het laden van de pagina. Omdat ze pas later zichtbaar worden via een animatie, weet ScrollTrigger niet dat er iets nieuws is verschenen. Daardoor werkt het scroll-effect soms niet goed of start het te laat. Dus een oplossing hier is die scrolltrigger refresh en laat ik hem zo weten dat er nieuwe inhoud is op de pagina, dus dat hij de triggers moet herberekenen, want zonder die refresh denkt ScrollTrigger dat de tekst nog onzichtbaar is, en werkt de animatie niet goed.
 
 -[GSAP: killTweensOf()](<https://gsap.com/docs/v3/GSAP/gsap.killTweensOf()/>) -> in SceneFireBirdDance.jsx: ik gebruik gsap.killTweensOf(eggRef.current) om eerst alle andere animaties op het ei te stoppen (zoals het pulseren), voordat we de explosie-animatie starten. Zo zorgen we ervoor dat het ei niet tegelijk pulseert én explodeert, wat anders voor conflicten kan zorgen.
+
+-[audio element](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/audio) -> MusicToggleButton.jsx -> alles over het <audio> element: play en pause methodes

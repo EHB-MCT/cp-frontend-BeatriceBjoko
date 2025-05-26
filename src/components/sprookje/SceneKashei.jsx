@@ -1,4 +1,3 @@
-// SceneKashei.jsx
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -15,7 +14,7 @@ const SceneKashei = () => {
 	const textsRef = useRef(null);
 
 	useEffect(() => {
-		// 1. Kashei groeit bij scroll
+		//  Kashei groeit bij scroll
 		gsap.to(kasheiRef.current, {
 			scale: 1.8,
 			scrollTrigger: {
@@ -27,7 +26,7 @@ const SceneKashei = () => {
 			ease: "power2.inOut",
 		});
 
-		// 2. Shake effect bij het bereiken van midden
+		// Shake effect bij het bereiken van midden
 		gsap.to(sceneRef.current, {
 			x: "-2%",
 			duration: 0.05,
